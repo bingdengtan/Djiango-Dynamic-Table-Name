@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/user" method="get">
+    {% csrf_token %}
+    Table ID: <input type="text" name="q">
+    <input type="submit" value="Submit">
+</form>
+
+Users as below:
+<table>
+    <tr><td>Name</td></tr>
+
+{% for user in list %}
+    <tr>
+        <td>{{ user.name }}</td>
+    </tr>
+{% endfor %}
+</table>
+</body>
+</html>
